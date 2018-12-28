@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/dimen_8dp"
+    android:paddingRight="@dimen/dimen_8dp"
+    android:paddingTop="@dimen/activity_margin">
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/title"
+                android:textColor="@color/note_list_text"
+                android:textStyle="bold|italic" />
+                
+           <EditText
+                android:id="@+id/admno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:padding="10dip"
+                android:textColor="@color/note_list_text"
+                android:textColorHint="@color/msg_no_notes"
+                android:background="@android:color/transparent"
+                android:layout_marginTop="5dip"
+                android:hint="Admno" />
+
+
+            <EditText
+                android:id="@+id/amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:padding="10dip"
+                android:inputType="numberDecimal"
+                android:textColor="@color/note_list_text"
+                android:textColorHint="@color/msg_no_notes"
+                android:background="@android:color/transparent"
+                android:layout_marginTop="5dip"
+                android:hint="Mode" />
+
+            <EditText
+                android:id="@+id/reference"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:padding="10dip"
+                android:textSize="15sp"
+                android:inputType="textCapWords"
+                android:textColor="@color/note_list_text"
+                android:textColorHint="@color/msg_no_notes"
+                android:background="@android:color/transparent"
+                android:layout_marginTop="5dip"
+                android:hint="Ref Code" />
+
+            <AutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:hint="Payment Mode"
+                android:padding="10dip"
+                android:textSize="15sp"
+                android:textColor="@color/note_list_text"
+                android:textColorHint="@color/msg_no_notes"
+                android:background="@android:color/transparent"
+                android:layout_marginBottom="20dip"
+                android:layout_marginTop="5dip"
+                android:id="@+id/mode" />
+    </LinearLayout>
+

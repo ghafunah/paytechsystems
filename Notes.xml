@@ -1,0 +1,319 @@
+// Find all dinosaurs whose names come before Pterodactyl lexicographically.
+var ref = firebase.database().ref("dinosaurs");
+ref.orderByKey().endAt("pterodactyl").on("child_added", function(snapshot) {
+  console.log(snapshot.key);
+});
+
+//99363/1065 
+
+// Find all dinosaurs whose height is exactly 25 meters.
+var ref = firebase.database().ref("dinosaurs");
+ref.orderByChild("height").equalTo(25).on("child_added", function(snapshot) {
+  console.log(snapshot.key);
+});
+
+
+var rootRef = firebase.database.ref();
+var usersRef = rootRef.child("users");
+
+usersRef.isEqual(rootRef);  // false
+usersRef.isEqual(rootRef.child("users"));  // true
+usersRef.parent.isEqual(rootRef);  // true
+var rootRef = firebase.database.ref();
+var usersRef = rootRef.child("users");
+var usersQuery = usersRef.limitToLast(10);
+
+usersQuery.isEqual(usersRef);  // false
+usersQuery.isEqual(usersRef.limitToLast(10));  // true
+usersQuery.isEqual(rootRef.limitToLast(10));  // false
+usersQuery.isEqual(usersRef.orderByKey().limitToLast(10));  // false
+
+
+
+
+// Find the two shortest dinosaurs.
+var ref = firebase.database().ref("dinosaurs");
+ref.orderByChild("height").limitToFirst(2).on("child_added", function(snapshot){
+  // This will be called exactly two times (unless there are less than two
+  // dinosaurs in the Database).
+
+  // It will also get fired again if one of the first two dinosaurs is
+  // removed from the data set, as a new dinosaur will now be the second
+  // shortest.
+  console.log(snapshot.key);
+});
+
+
+// Find the two heaviest dinosaurs.
+var ref = firebase.database().ref("dinosaurs");
+ref.orderByChild("weight").limitToLast(2).on("child_added", function(snapshot){
+  // This callback will be triggered exactly two times, unless there are
+  // fewer than two dinosaurs stored in the Database. It will also get fired
+  // for every new, heavier dinosaur that gets added to the data set.
+  console.log(snapshot.key);
+});
+
+
+
+var onValueChange = function(dataSnapshot) {  ... };
+ref.on('value', onValueChange);
+ref.child('meta-data').on('child_added', onChildAdded);
+// Sometime later...
+ref.off('value', onValueChange);
+
+// You must also call off() for any child listeners on ref
+// to cancel those callbacks
+ref.child('meta-data').off('child_added', onValueAdded);
+// Or you can save a line of code by using an inline function
+// and on()'s return value.
+var onValueChange = ref.on('value', function(dataSnapshot){ ... });
+// Sometime later...
+ref.off('value', onValueChange);
+
+
+
+Handle a new value:
+
+ref.on('value', function(dataSnapshot){
+  ...
+});
+Handle a new child:
+
+ref.on('child_added', function(childSnapshot, prevChildKey){
+  ...
+});
+Handle child removal:
+
+ref.on('child_removed', function(oldChildSnapshot){
+  ...
+});
+Handle child data changes:
+
+ref.on('child_changed', function(childSnapshot, prevChildKey){
+  ...
+});
+Handle child ordering changes:
+
+ref.on('child_moved', function(childSnapshot, prevChildKey){
+  ...
+});
+
+
+
+
+// Basic usage of .once() to read the data located at ref.
+ref.once('value')
+  .then(function(dataSnapshot){
+    // handle read data.
+  });
+
+
+
+
+ var ref = firebase.database().ref("dinosaurs");
+ref.orderByChild("height").on("child_added", function(snapshot){
+  console.log(snapshot.key + " was " + snapshot.val().height + " m tall");
+});
+
+
+
+var ref = firebase.database().ref("dinosaurs");
+ref.orderByKey().on("child_added", function(snapshot){
+  console.log(snapshot.key);
+});
+
+
+var scoresRef = firebase.database().ref("scores");
+scoresRef.orderByValue().limitToLast(3).on("value", function(snapshot){
+  snapshot.forEach(function(data){
+    console.log("The " + data.key + " score is " + data.val());
+  });
+});
+
+
+// Find all dinosaurs that are at least three meters tall.
+var ref = firebase.database().ref("dinosaurs");
+ref.orderByChild("height").startAt(3).on("child_added", function(snapshot){
+  console.log(snapshot.key)
+});
+
+// Calling toString() on a root Firebase reference returns the URL where its
+// data is stored within the Database:
+var rootRef = firebase.database().ref();
+var rootUrl = rootRef.toString();
+// rootUrl === "https://sample-app.firebaseio.com/".
+
+// Calling toString() at a deeper Firebase reference returns the URL of that
+// deep path within the Database:
+var adaRef = rootRef.child('users/ada');
+var adaURL = adaRef.toString();
+// adaURL === "https://sample-app.firebaseio.com/users/ada".
+
+
+{
+  "rules": {
+    // User profiles are only readable/writable by the user who owns it
+    "users": {
+      "$UID": {
+        ".read": "auth.uid == $UID",
+        ".write": "auth.uid == $UID"
+      }
+    },
+
+    // Posts can be read by anyone but only written by logged-in users.
+    "posts": {
+      ".read": true,
+      ".write": "auth.uid != null",
+
+      "$POSTID": {
+        // UID must match logged in user and is fixed once set
+        "uid": {
+          ".validate": "(data.exists() && data.val() == newData.val()) || newData.val() == auth.uid"
+        },
+
+        // User can only update own stars
+        "stars": {
+          "$UID": {
+              ".validate": "auth.uid == $UID"
+          }
+        }
+      }
+    },
+
+    // User posts can be read by anyone but only written by the user that owns it,
+    // and with a matching UID
+    "user-posts": {
+      ".read": true,
+
+      "$UID": {
+        "$POSTID": {
+          ".write": "auth.uid == $UID",
+            ".validate": "data.exists() || newData.child('uid').val() == auth.uid"
+        }
+      }
+    },
+
+
+    // Comments can be read by anyone but only written by a logged in user
+    "post-comments": {
+      ".read": true,
+      ".write": "auth.uid != null",
+
+      "$POSTID": {
+        "$COMMENTID": {
+          // UID must match logged in user and is fixed once set
+          "uid": {
+              ".validate": "(data.exists() && data.val() == newData.val()) || newData.val() == auth.uid"
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+// get QR file from text using defaults
+File file = QRCode.from("Hello World").file();
+
+// get QR stream from text using defaults
+ByteArrayOutputStream stream = QRCode.from("Hello World").stream();
+
+// override the image type to be JPG
+QRCode.from("Hello World").to(ImageType.JPG).file();
+QRCode.from("Hello World").to(ImageType.JPG).stream();
+
+// override image size to be 250x250
+QRCode.from("Hello World").withSize(250, 250).file();
+QRCode.from("Hello World").withSize(250, 250).stream();
+
+// override size and image type
+QRCode.from("Hello World").to(ImageType.GIF).withSize(250, 250).file();
+QRCode.from("Hello World").to(ImageType.GIF).withSize(250, 250).stream();
+
+// override default colors (black on white)
+// notice that the color format is "0x(alpha: 1 byte)(RGB: 3 bytes)"
+// so in the example below it's red for foreground and yellowish for background, both 100% alpha (FF).
+QRCode.from("Hello World").withColor(0xFFFF0000, 0xFFFFFFAA).file();
+
+// supply own outputstream
+QRCode.from("Hello World").to(ImageType.PNG).writeTo(outputStream);
+
+// supply own file name
+QRCode.from("Hello World").file("QRCode");
+
+// supply charset hint to ZXING
+QRCode.from("Hello World").withCharset("UTF-8");
+
+// supply error correction level hint to ZXING
+QRCode.from("Hello World").withErrorCorrection(ErrorCorrectionLevel.L);
+
+// supply any hint to ZXING
+QRCode.from("Hello World").withHint(EncodeHintType.CHARACTER_SET, "UTF-8");
+
+// encode contact data as vcard using defaults
+VCard johnDoe = new VCard("John Doe")
+                    .setEmail("john.doe@example.org")
+                    .setAddress("John Doe Street 1, 5678 Doestown")
+                    .setTitle("Mister")
+                    .setCompany("John Doe Inc.")
+                    .setPhoneNumber("1234")
+                    .setWebsite("www.example.org");
+QRCode.from(johnDoe).file();
+
+// encode email data
+EMail email = new EMail("John.Doe@example.org");
+QRCode.from(email).file();
+
+// encode mms data
+MMS mms = new MMS("Hello World");
+QRCode.from(mms).file();
+
+// encode sms data
+SMS sms = new SMS("Hello World");
+QRCode.from(sms).file();
+
+// encode MeCard data
+MeCard johnDoe = new MeCard("John Doe");
+johnDoe.setEmail("john.doe@example.org");
+johnDoe.setAddress("John Doe Street 1, 5678 Doestown");
+johnDoe.setTelephone("1234");
+QRCode.from(johnDoe).file();
+
+// if using special characters don't forget to supply the encoding
+VCard johnSpecial = new VCard("Jöhn Dɵe")
+                        .setAddress("ëåäöƞ Sträät 1, 1234 Döestüwn");
+QRCode.from(johnSpecial).withCharset("UTF-8").file();
+
+// QRGen currently supports the following schemas:
+// - BizCard
+// - Bookmark
+// - Email
+// - GeoInfo
+// - Girocode
+// - GooglePlay
+// - ICal
+// - KddiAu
+// - MMS
+// - MeCard
+// - SMS
+// - Telephone
+// - Url
+// - VCard
+// - Wifi
+// - YouTube
+Java SE only
+When using java you can create svg files via .svg() terminal operator:
+
+File file = QRCode.from("www.example.org").svg();
+File file = QRCode.from("www.example.com").withSize(250, 250).withColor(30, 90).svg();
+It's also possible to write svg to an OutputStream with terminal operation:
+
+OutputStream outs = // ...
+QRCode.from("www.example.org").svg(outs);
+Android only
+On Android you have a special method bitmap() which returns a android.graphics.Bitmap without creating a File object before, so you can use the generated android.graphics.Bitmap immediately inside an ImageView:
+
+Bitmap myBitmap = QRCode.from("www.example.org").bitmap();
+ImageView myImage = (ImageView) findViewById(R.id.imageView);
+myImage.setImageBitmap(myBitmap);

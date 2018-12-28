@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.paytech.paytechsystems.MainActivity">
+    
+    <item
+        android:id="@+id/action_search"
+        android:icon="@android:drawable/ic_menu_search"
+        app:showAsAction="always"
+        app:actionViewClass="android.support.v7.widget.SearchView"
+        android:title="Search"/>
+        
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="101"
+        android:title="@string/action_settings"
+        app:showAsAction="never" />     
+    <item
+        android:id="@+id/action_relation"
+        android:orderInCategory="101"
+        android:title=" Relation "
+        app:showAsAction="never" />    
+    <item
+        android:id="@+id/action_messages"
+        android:orderInCategory="101"
+        android:title=" Messages "
+        app:showAsAction="never" />    
+    <item
+        android:id="@+id/action_family"
+        android:orderInCategory="101"
+        android:title=" Family "
+        app:showAsAction="never" />     
+    <item
+        android:id="@+id/action_mymessages"
+        android:orderInCategory="101"
+        android:title=" My Messages "
+        app:showAsAction="never" />        
+    <item
+        android:id="@+id/action_settings_headers"
+        android:orderInCategory="101"
+        android:title="@string/action_settings_headers"
+        app:showAsAction="never" />
+            
+    <item
+        android:id="@+id/action_browser"
+        android:orderInCategory="101"
+        android:title=" Web Browser "
+        app:showAsAction="never" />            
+    
+    <item
+        android:id="@+id/action_storage"
+        android:orderInCategory="101"
+        android:title=" Storage "
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_qrgen"
+        android:orderInCategory="101"
+        android:title=" QR Gen "
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_logout"
+        android:orderInCategory="102"
+        android:title="@string/action_logout"
+        app:showAsAction="never" />
+</menu>

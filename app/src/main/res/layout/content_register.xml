@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_marginTop="?attr/actionBarSize"
+    android:fillViewport="true">
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" 
+        android:background="@color/feed_bg">
+
+   <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/activity_vertical_margin"
+        android:layout_below="@id/header"
+        android:orientation="vertical" >
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_usridno"
+            android:textSize="15sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/usridno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:padding="10dip"
+                android:layout_marginTop="25dip"
+                android:hint="First Name" />
+        </android.support.design.widget.TextInputLayout>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_usrfname"
+            android:layout_width="match_parent"
+            android:textSize="15sp"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/usrfname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:padding="10dip"
+                android:layout_marginTop="25dip"
+                android:hint="First Name" />
+        </android.support.design.widget.TextInputLayout>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_usrsname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/usrsname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:padding="10dip"
+                android:textSize="15sp"
+                android:layout_marginTop="25dip"
+                android:hint="Last Name" />
+        </android.support.design.widget.TextInputLayout>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_usruname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/usruname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:padding="10dip"
+                android:textSize="15sp"
+                android:layout_marginTop="25dip"
+                android:hint="Username" />
+        </android.support.design.widget.TextInputLayout>
+
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_usremail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/usremail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:padding="10dip"
+                android:textSize="15sp"
+                android:layout_marginTop="25dip"
+                android:hint="Email Address" />
+        </android.support.design.widget.TextInputLayout>
+
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_usrpassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/usrpassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:padding="10dip"
+                android:textSize="15sp"
+                android:layout_marginTop="25dip"
+                android:hint="Password" />
+        </android.support.design.widget.TextInputLayout>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_usrphone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/usrphone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:padding="10dip"
+                android:textSize="15sp"
+                android:layout_marginTop="25dip"
+                android:hint="Mobile Phone" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_usrbranch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <AutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="User Branch"
+                android:padding="10dip"
+                android:textSize="15sp"
+                android:layout_marginBottom="20dip"
+                android:layout_marginTop="5dip"
+                android:background="@color/white"
+                android:id="@+id/usrbranch" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_usrsex"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="User Branch"
+                android:padding="10dip"
+                android:textSize="15sp"
+                android:prompt="@string/spinner_title"
+                android:layout_marginBottom="20dip"
+                android:layout_marginTop="5dip"
+                android:background="@color/white"
+                android:id="@+id/usrsex" />
+        </android.support.design.widget.TextInputLayout>
+
+        <!-- Save Button -->
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@color/btn_login_bg"
+                android:text="Save"
+                android:textColor="@color/btn_login"
+                android:layout_weight="1" />
+        </LinearLayout>
+        <Button
+            android:id="@+id/btn_bottom_sheet"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/activity_margin"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:text="Show Bottom Sheet" />
+    <Button
+        android:id="@+id/btn_bottom_sheet_dialog"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="@dimen/activity_margin"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:text="Show Bottom Sheet Dialog" />
+ 
+    <Button
+        android:id="@+id/btn_bottom_sheet_dialog_fragment"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/activity_margin"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:text="Show Bottom Sheet Dialog Fragment" />
+    </LinearLayout>
+
+    </RelativeLayout>
+</ScrollView>

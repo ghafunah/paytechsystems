@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "659058319090",
+    "firebase_url": "https://family-project-3a0ac.firebaseio.com",
+    "project_id": "family-project-3a0ac",
+    "storage_bucket": "family-project-3a0ac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:659058319090:android:4f97441bb2ad7452",
+        "android_client_info": {
+          "package_name": "com.paytech.paytechsystems"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "659058319090-1thtqrf26hu4ukbopea94chm0h59dhdk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDecOxkIqhX0ZEr4_MCZwvh6gJZOJVskGs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/dimen_8dp"
+    android:paddingRight="@dimen/dimen_8dp"
+    android:paddingTop="@dimen/activity_margin">
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/title"
+            android:background="@android:color/transparent"
+            android:textColor="@color/note_list_text"
+            android:textStyle="bold|italic" />
+
+        <EditText
+            android:id="@+id/le_course"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:padding="10dip"
+            android:textColor="@color/note_list_text"
+            android:textColorHint="@color/msg_no_notes"
+            android:background="@android:color/transparent"
+            android:layout_marginTop="25dip"
+            android:hint="Course Name" />
+
+        <EditText
+            android:id="@+id/le_lessonname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:padding="10dip"
+            android:layout_marginTop="25dip"
+            android:textColor="@color/note_list_text"
+            android:textColorHint="@color/msg_no_notes"
+            android:background="@android:color/transparent"
+            android:hint="Lesson Description" />
+
+    </LinearLayout>
+

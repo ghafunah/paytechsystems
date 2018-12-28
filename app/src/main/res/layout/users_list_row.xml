@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/feed_item_bg"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical"
+    android:layout_marginRight="@dimen/margin_2"
+    android:layout_marginBottom="@dimen/margin_2"
+    android:layout_marginLeft="@dimen/margin_2"
+    android:layout_marginTop="@dimen/margin_2"
+    android:paddingBottom="@dimen/padding_5"
+    android:paddingLeft="@dimen/padding_5"
+    android:paddingRight="@dimen/padding_5"
+    android:paddingTop="@dimen/padding_5">
+ 
+    <TextView
+        android:id="@+id/u_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/title"
+        android:textSize="@dimen/text_16"
+        android:padding="@dimen/padding_2"
+        android:textStyle="bold" />
+ 
+    <TextView
+        android:id="@+id/u_idno"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/u_name"
+        android:textColor="@color/title"
+        android:textSize="@dimen/text_16"
+        android:padding="@dimen/padding_2" />
+
+
+    <TextView
+        android:id="@+id/u_role"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/u_idno"
+        android:textColor="@color/title"
+        android:textSize="@dimen/text_16"
+        android:padding="@dimen/padding_2" />
+
+    <TextView
+        android:id="@+id/u_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/u_role"
+        android:textColor="@color/title"
+        android:textSize="@dimen/text_16"
+        android:padding="@dimen/padding_2" />
+
+
+    <TextView
+        android:id="@+id/u_uname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/u_role"
+        android:textColor="@color/title"
+        android:textSize="@dimen/text_16"
+        android:padding="@dimen/padding_2"
+        android:textStyle="bold"
+        android:textAllCaps="false"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"/>
+ 
+</RelativeLayout>
+<!-- android:layout_alignParentRight="true" -->

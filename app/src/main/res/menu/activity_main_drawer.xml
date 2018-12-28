@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:title="@string/nav_home"
+             />        
+<!--         <item
+            android:id="@+id/nav_branch"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/nav_branch" /> 
+        <item
+            android:id="@+id/nav_instructor"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/nav_instructor" />
+        <item
+            android:id="@+id/nav_staff"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/nav_staff" />
+        <item
+            android:id="@+id/nav_mpesa"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Mpesa" />        
+        <item
+            android:id="@+id/nav_payment"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Payments" /> -->       
+         <item
+            android:id="@+id/nav_studenthome"
+            android:title="Students Report" />            
+        <item
+            android:id="@+id/nav_student"
+            android:title="Student" />
+        <item
+            android:id="@+id/nav_lessonedone"
+            android:title="Lessons Done" />    
+        <item
+            android:id="@+id/nav_branchcollections"
+            android:title="Branch Collections" />           
+        <item
+            android:id="@+id/nav_payments"
+            android:title="@string/title_activity_payments" />               
+        <item
+            android:id="@+id/nav_mpesa2"
+            android:title="@string/title_activity_mpesa" /> 
+    </group>
+
+    <item android:title="Lists">
+        <menu>
+
+            <item
+                android:id="@+id/nav_teacher"
+                android:title="Teacher" />            
+            <item
+                android:id="@+id/nav_course"
+                android:title="Course" />            
+            <item
+                android:id="@+id/nav_vehicles"
+                android:title="Vehicles" />             
+            
+            <item
+                android:id="@+id/nav_branches"
+                android:title="Branches" /> 
+            <item
+                android:id="@+id/nav_permissions"
+                android:title="Permissions" />    
+            <item
+                android:id="@+id/nav_users"
+                android:title="Users" />             
+            <item
+                android:id="@+id/nav_note"
+                android:title="Note" />      
+
+        </menu>
+    </item>
+
+    <item android:title="Settings">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Message" />
+        </menu>
+    </item>
+
+</menu>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:scrollbarAlwaysDrawHorizontalTrack="true"
+    android:scrollbarSize="@dimen/padding_2"
+    android:paddingLeft="@dimen/dimen_8dp"
+    android:paddingRight="@dimen/dimen_8dp"
+    android:background="@color/feed_bg"
+    android:paddingTop="@dimen/activity_margin">
+        <TextView
+            android:id="@+id/txtbarcode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/title"
+            android:padding="5dip"
+            android:text=" Barcode "
+            android:textSize="@dimen/text_16"
+                />
+        <EditText
+            android:id="@+id/itembarcode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:textColor="@color/note_list_text"
+            android:textColorHint="@color/msg_no_notes"
+            android:background="@drawable/bg_parent_rounded_corner"
+            android:padding="5dip"
+            android:layout_marginTop="2dip"
+            android:hint="Barcode Number" />
+
+        <TextView
+            android:id="@+id/txtname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/title"
+            android:padding="5dip"
+            android:text="Item Name"
+            android:textSize="@dimen/text_16"
+            />
+        <EditText
+            android:id="@+id/itemname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:textColor="@color/note_list_text"
+            android:textColorHint="@color/msg_no_notes"
+            android:background="@drawable/bg_parent_rounded_corner"
+            android:padding="5dip"
+            android:hint="Item Name" />
+
+        <TextView
+            android:id="@+id/txtlocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/title"
+            android:padding="5dip"
+            android:text="Item Location"
+            android:textSize="@dimen/text_16"
+            />
+        <EditText
+            android:id="@+id/itemlocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:textColor="@color/note_list_text"
+            android:textColorHint="@color/msg_no_notes"
+            android:background="@drawable/bg_parent_rounded_corner"
+            android:padding="5dip"
+            android:hint="Item Location" />
+
+        <TextView
+            android:id="@+id/txtsite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/title"
+            android:padding="5dip"
+            android:text="Item Site"
+            android:textSize="@dimen/text_16"
+            />
+        <AutoCompleteTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Item Site"
+            android:padding="5dip"
+            android:layout_marginBottom="@dimen/dimen_10"
+            android:textColor="@color/note_list_text"
+            android:textColorHint="@color/msg_no_notes"
+            android:background="@drawable/bg_parent_rounded_corner"
+            android:id="@+id/itemsite" />
+
+    </LinearLayout >
+</ScrollView>
+

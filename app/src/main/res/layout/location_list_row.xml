@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/feed_item_bg"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical"
+    android:layout_marginRight="@dimen/margin_2"
+    android:layout_marginBottom="@dimen/margin_2"
+    android:layout_marginLeft="@dimen/margin_2"
+    android:layout_marginTop="@dimen/margin_2"
+
+    android:paddingBottom="@dimen/padding_5"
+    android:paddingLeft="@dimen/padding_5"
+    android:paddingRight="@dimen/padding_5"
+    android:paddingTop="@dimen/padding_5">
+ 
+
+    <TextView
+        android:id="@+id/latitude"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/name"
+        android:textColor="@color/title"
+        android:textSize="@dimen/text_16"
+        android:text="Latitude"
+        android:padding="@dimen/padding_2" />
+ 
+<!--     <TextView
+        android:id="@+id/longitude"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/latitude"
+        android:textColor="@color/title"
+        android:text="Longitude"
+        android:textSize="@dimen/text_16"
+        android:padding="@dimen/padding_2" />
+
+
+    <TextView
+        android:id="@+id/updatetime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/longitude"
+        android:textColor="@color/title"
+        android:textSize="@dimen/text_16"
+        android:text="Date"
+        android:padding="@dimen/padding_2" />
+    -->
+</RelativeLayout>
+<!-- android:layout_alignParentRight="true" -->

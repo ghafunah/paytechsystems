@@ -1,0 +1,71 @@
+<menu 
+	xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:mContext=".NoteActivity">
+    <item
+        android:id="@+id/nav_specs"
+        app:showAsAction="never"
+        android:title="Phone Properties" />    
+    <item
+        android:id="@+id/nav_gallery"
+        app:showAsAction="never"
+        android:title="Gallery" />     
+    <item
+        android:id="@+id/nav_paybill"
+        app:showAsAction="never"
+        android:title="Paybill" />          
+    <item
+        android:id="@+id/nav_mail"
+        app:showAsAction="never"
+        android:title="Mail" />              
+    <item
+        android:id="@+id/nav_feed"
+        app:showAsAction="never"
+        android:title="Face Feeds" />            
+    <item
+        android:id="@+id/nav_movie"
+        app:showAsAction="never"
+        android:title="Movie" />            
+    <item
+        android:id="@+id/nav_firebase"
+        app:showAsAction="never"
+        android:title="Fire base" />             
+    <item
+        android:id="@+id/nav_chat"
+        app:showAsAction="never"
+        android:title="Chat Message" />             
+    <item
+        android:id="@+id/nav_retrofit"
+        app:showAsAction="never"
+        android:title="Retrofit Movie" />               
+    <item
+        android:id="@+id/nav_userfire"
+        app:showAsAction="never"
+        android:title="User Firebase" />                  
+    <item
+        android:id="@+id/nav_cardview"
+        app:showAsAction="never"
+        android:title="Card View" />                   
+    <item
+        android:id="@+id/nav_mainfire"
+        app:showAsAction="never"
+        android:title="Main Fire" />
+    <item
+        android:id="@+id/action_camera"
+        android:icon="@android:drawable/ic_menu_camera"
+        android:orderInCategory="100"
+        android:title="@string/action_camera"
+        app:showAsAction="never" />     
+    <item
+        android:id="@+id/action_ticket"
+        android:orderInCategory="100"
+        android:title="@string/action_ticket"
+        app:showAsAction="never" />     
+  
+    <item
+        android:id="@+id/action_location"
+        android:orderInCategory="100"
+        android:title="@string/title_activity_location"
+        app:showAsAction="never" />
+</menu>

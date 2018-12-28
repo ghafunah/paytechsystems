@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:scrollbarAlwaysDrawHorizontalTrack="true"
+    android:scrollbarSize="@dimen/padding_2"
+    android:paddingLeft="@dimen/dimen_8dp"
+    android:paddingRight="@dimen/dimen_8dp"
+    android:background="@color/feed_bg"
+    android:paddingTop="@dimen/activity_margin">
+
+        <EditText
+            android:id="@+id/code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:textColor="@color/note_list_text"
+            android:textColorHint="@color/msg_no_notes"
+            android:background="@drawable/bg_parent_rounded_corner"
+            android:padding="7dip"
+            android:layout_marginBottom="5dip"
+            android:hint="Branch Code" />
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:textColor="@color/note_list_text"
+            android:textColorHint="@color/msg_no_notes"
+            android:background="@drawable/bg_parent_rounded_corner"
+            android:padding="7dip"
+            android:layout_marginBottom="5dip"
+            android:hint="Branch Name" />
+
+        <EditText
+            android:id="@+id/location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:textColor="@color/note_list_text"
+            android:textColorHint="@color/msg_no_notes"
+            android:background="@drawable/bg_parent_rounded_corner"
+            android:padding="7dip"
+            android:layout_marginBottom="5dip"
+            android:hint="Branch Location" />
+
+        <EditText
+            android:id="@+id/phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:textColor="@color/note_list_text"
+            android:textColorHint="@color/msg_no_notes"
+            android:background="@drawable/bg_parent_rounded_corner"
+            android:padding="7dip"
+            android:layout_marginBottom="5dip"
+            android:hint="Branch Till" />
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:textColor="@color/note_list_text"
+            android:textColorHint="@color/msg_no_notes"
+            android:background="@drawable/bg_parent_rounded_corner"
+            android:padding="7dip"
+            android:layout_marginBottom="5dip"
+            android:hint="Email Address" />
+
+    </LinearLayout>
+

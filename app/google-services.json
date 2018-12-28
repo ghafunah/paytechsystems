@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1062918350389",
+    "firebase_url": "https://com-paytech-paytechsystems.firebaseio.com",
+    "project_id": "com-paytech-paytechsystems",
+    "storage_bucket": "com-paytech-paytechsystems.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1062918350389:android:4f97441bb2ad7452",
+        "android_client_info": {
+          "package_name": "com.paytech.paytechsystems"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1062918350389-rhcqsh8eilsmpddke2cgvackv8l7kq65.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.paytech.paytechsystems",
+            "certificate_hash": "13924c1f2023040797fbbd393dd24125c391361d"
+          }
+        },
+        {
+          "client_id": "1062918350389-lvhqmckokqof20fmlodd8tiuqkvl2br9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwplWrQGdwV7elavb6cbIE-H9M4M3Qwco"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1062918350389-lvhqmckokqof20fmlodd8tiuqkvl2br9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

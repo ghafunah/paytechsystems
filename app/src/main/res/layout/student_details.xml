@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/feed_item_bg"    
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical"
+    android:layout_marginRight="@dimen/margin_2"
+    android:layout_marginBottom="@dimen/margin_2"
+    android:layout_marginLeft="@dimen/margin_2"
+    android:layout_marginTop="@dimen/margin_2"
+
+    android:paddingBottom="@dimen/padding_5"
+    android:paddingLeft="@dimen/padding_5"
+    android:paddingRight="@dimen/padding_5"
+    android:paddingTop="@dimen/padding_5">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:padding="@dimen/padding_2"
+        android:textColor="@color/title"
+        android:textSize="@dimen/text_16"
+        android:textStyle="bold|italic" />
+
+    <TextView
+        android:id="@+id/admno"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:padding="@dimen/padding_2"
+        android:textColor="@color/title"
+        android:textSize="@dimen/text_16" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/admno"
+        android:textColor="@color/title"
+        android:textSize="@dimen/text_16"
+        android:padding="@dimen/padding_2" />
+ 
+    <TextView
+        android:id="@+id/idno"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/name"
+        android:textColor="@color/title"
+        android:textSize="@dimen/text_16"
+        android:padding="@dimen/padding_2" />
+ 
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/idno"
+        android:textColor="@color/title"
+        android:textSize="@dimen/text_16"
+        android:padding="@dimen/padding_2" />
+ 
+    <TextView
+        android:id="@+id/phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/email"
+        android:textColor="@color/title"
+        android:textSize="@dimen/text_16"
+        android:padding="@dimen/padding_2" />
+ 
+    <TextView
+        android:id="@+id/sex"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/phone"
+        android:textColor="@color/title"
+        android:textSize="@dimen/text_16"
+        android:padding="@dimen/padding_2" />
+ 
+    <TextView
+        android:id="@+id/dob"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sex"
+        android:textColor="@color/title"
+        android:textSize="@dimen/text_16"
+        android:padding="@dimen/padding_2"/>
+ 
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dob"
+        android:textColor="@color/title"
+        android:textSize="@dimen/text_16"
+        android:padding="@dimen/padding_2" />
+
+    <TextView
+        android:id="@+id/admdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/status"
+        android:textColor="@color/title"
+        android:textSize="@dimen/text_16"
+        android:padding="@dimen/padding_2" />
+ 
+</RelativeLayout>
+<!-- android:layout_alignParentRight="true" -->

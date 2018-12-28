@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical"
+    android:background="@color/feed_item_bg"
+    android:layout_marginRight="@dimen/margin_2"
+    android:layout_marginBottom="@dimen/margin_2"
+    android:layout_marginLeft="@dimen/margin_2"
+    android:layout_marginTop="@dimen/margin_2"
+
+    android:paddingBottom="@dimen/padding_5"
+    android:paddingLeft="@dimen/padding_5"
+    android:paddingRight="@dimen/padding_5"
+    android:paddingTop="@dimen/padding_5">
+ 
+    <TextView
+        android:id="@+id/tname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:textColor="@color/title"
+        android:textSize="@dimen/text_16"
+        android:padding="@dimen/padding_2"
+        android:textStyle="bold" />
+ 
+    <TextView
+        android:id="@+id/tphone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tname"
+        android:textColor="@color/title"
+        android:textSize="@dimen/text_16"
+        android:padding="@dimen/padding_2" />
+ 
+    <TextView
+        android:id="@+id/temail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tphone"
+        android:textColor="@color/title"
+        android:textSize="@dimen/text_16"
+        android:padding="@dimen/padding_2" />
+
+    <TextView
+        android:id="@+id/tdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/title"
+        android:textSize="@dimen/text_16"
+        android:padding="@dimen/padding_2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true" /> 
+ 
+</RelativeLayout>
+<!-- android:layout_alignParentRight="true" -->

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:scrollbarAlwaysDrawHorizontalTrack="true"
+        android:scrollbarSize="@dimen/padding_2"
+        android:paddingLeft="@dimen/dimen_8dp"
+        android:paddingRight="@dimen/dimen_8dp"
+        android:background="@color/feed_bg"
+        android:paddingTop="@dimen/activity_margin">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/title"
+            android:padding="5dip"
+            android:text="Id Number"
+            android:textSize="@dimen/text_16"
+            />
+           <EditText
+                android:id="@+id/idno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:padding="@dimen/padding_5"
+                android:textColor="@color/note_list_text"
+                android:textColorHint="@color/msg_no_notes"
+                android:background="@drawable/bg_parent_rounded_corner"
+                android:hint="Id Number" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/title"
+            android:padding="5dip"
+            android:text="First Name"
+            android:textSize="@dimen/text_16"
+            />
+            <EditText
+                android:id="@+id/fname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:padding="@dimen/padding_5"
+                android:textColor="@color/note_list_text"
+                android:textColorHint="@color/msg_no_notes"
+                android:background="@drawable/bg_parent_rounded_corner"
+                android:hint="First Name" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/title"
+            android:padding="5dip"
+            android:text="Last Name"
+            android:textSize="@dimen/text_16"
+            />
+            <EditText
+                android:id="@+id/sname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:padding="@dimen/padding_5"
+                android:textColor="@color/note_list_text"
+                android:textColorHint="@color/msg_no_notes"
+                android:background="@drawable/bg_parent_rounded_corner"
+                android:hint="Last Name" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/title"
+            android:padding="5dip"
+            android:text="Email Address"
+            android:textSize="@dimen/text_16"
+            />
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:padding="@dimen/padding_5"
+                android:textSize="15sp"
+                android:textColor="@color/note_list_text"
+                android:textColorHint="@color/msg_no_notes"
+                android:background="@drawable/bg_parent_rounded_corner"
+                android:hint="Email Address" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/title"
+            android:padding="5dip"
+            android:text="Phone Number"
+            android:textSize="@dimen/text_16"
+            />
+            <EditText
+                android:id="@+id/phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:padding="@dimen/padding_5"
+                android:textColor="@color/note_list_text"
+                android:textColorHint="@color/msg_no_notes"
+                android:background="@drawable/bg_parent_rounded_corner"
+                android:hint="Phone Number" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/title"
+            android:padding="5dip"
+            android:text="Sex"
+            android:textSize="@dimen/text_16"
+            />
+            <AutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:hint="Sex"
+                android:padding="@dimen/padding_5"
+                android:textColor="@color/note_list_text"
+                android:textColorHint="@color/msg_no_notes"
+                android:background="@drawable/bg_parent_rounded_corner"
+                android:id="@+id/gender" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/title"
+            android:padding="5dip"
+            android:text="Year of Birth"
+            android:textSize="@dimen/text_16"
+            />
+            <AutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Year of Birth"
+                android:padding="@dimen/padding_5"
+                android:singleLine="true"
+                android:textColor="@color/note_list_text"
+                android:textColorHint="@color/msg_no_notes"
+                android:background="@drawable/bg_parent_rounded_corner"
+                android:id="@+id/yob" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/title"
+            android:padding="5dip"
+            android:text="Branch"
+            android:textSize="@dimen/text_16"
+            />
+            <AutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Branch"
+                android:padding="@dimen/padding_5"
+                android:singleLine="true"
+                android:layout_marginBottom="@dimen/dimen_10"
+                android:textColor="@color/note_list_text"
+                android:textColorHint="@color/msg_no_notes"
+                android:background="@drawable/bg_parent_rounded_corner"
+                android:id="@+id/branch" />
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.paytech.paytechsystems">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+
+    <!-- <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+
+    <application
+        android:name=".helper.Controller"
+        android:allowBackup="true"
+        android:icon="@mipmap/condira"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/condira"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".WelcomeActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".genqr.QrGen"
+            android:parentActivityName=".MainActivity">
+        </activity>        
+        <activity
+            android:name=".genqr.BarcodeGenerationActivity"
+            android:parentActivityName=".genqr.QrGen">
+        </activity>
+        <activity
+            android:name=".storage.StorageActivity"
+            android:launchMode="singleTask">
+        </activity>
+
+        <service
+            android:name=".storage.MyDownloadService"
+            android:exported="false" />
+
+        <service
+            android:name=".storage.MyUploadService"
+            android:exported="false" />
+
+        <activity android:name=".WebActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>        
+        <activity android:name=".BrowserActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+
+        <activity
+            android:name=".SettingsHeadersActivity"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName=".MainActivity" />        
+        <activity
+            android:name=".MessageBox"
+            android:label=" My Messages "
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".UploadActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".Login"
+            android:label="@string/title_activity_login"
+            android:theme="@style/AppTheme.NoActionBar" />        
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/title_activity_login"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Register"
+            android:label="@string/title_activity_register"
+            android:parentActivityName=".Users"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <receiver android:name=".helper.NetworkStateChecker">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+        <!-- Firebase Notifications -->
+        <service android:name=".service.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+ 
+        <service android:name=".service.MyFirebaseInstanceIDService"  android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <!-- //<activity android:name=".LruBitmapCache" /> -->
+        <activity
+            android:name=".Users"
+            android:label="@string/title_activity_users"
+            android:icon="@drawable/ic_drawer"
+            android:theme="@style/AppTheme"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name=".ScanActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_ticket"
+            android:parentActivityName=".NoteActivity" />
+        <activity
+            android:name=".TicketResultActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_ticket"
+            android:parentActivityName=".ScanActivity"
+        ></activity>
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity android:name=".CameraUtils" />
+         <activity
+            android:name=".CameraActivity"
+            android:label="@string/title_activity_camera"
+            android:parentActivityName=".MainActivity"
+            ></activity>         
+        <activity
+            android:name=".Students"
+            android:label="@string/title_activity_students"
+            android:parentActivityName=".MainActivity"
+            >
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+        </activity>             
+            <activity
+            android:name=".NewStudent"
+            android:label="@string/title_activity_student"
+            android:parentActivityName=".Students"
+            ></activity>         
+            <activity
+            android:name=".Teachers"
+            android:label="@string/title_activity_teachers"
+            android:parentActivityName=".MainActivity"
+            ></activity>          
+            <activity
+            android:name=".LessonsDone"
+            android:label="@string/lessonsdone"
+            android:parentActivityName=".MainActivity"
+            ></activity>            
+            <activity
+            android:name=".BranchCollections"
+            android:label="@string/collections"
+            android:parentActivityName=".MainActivity"
+            ></activity>             
+            <activity
+            android:name=".PhoneSpec"
+            android:label="Phone Properties"
+            android:parentActivityName=".NoteActivity"
+            ></activity>          
+            <activity
+            android:name=".StudentHomeActivity"
+            android:label="@string/title_activity_students"
+            android:parentActivityName=".MainActivity"
+            ></activity>           
+            <activity
+            android:name=".MpesaActivity"
+            android:label="@string/title_activity_mpesa"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            ></activity>            
+            <activity
+            android:name=".PaybillActivity"
+            android:label=" Paybill Transactions"
+            android:parentActivityName=".MainActivity"
+            ></activity>          
+            <activity
+            android:name=".NewTeacher"
+            android:label="@string/title_activity_teacher"
+            android:parentActivityName=".Teachers"
+            ></activity>            
+            <activity
+            android:name=".Courses"
+            android:label="@string/title_activity_courses"
+            android:parentActivityName=".MainActivity"
+            ></activity>             
+            <activity
+            android:name=".NewCourse"
+            android:label="@string/title_activity_course"
+            android:parentActivityName=".Courses"
+            ></activity>             
+            <activity
+            android:name=".Editions"
+            android:label="Editions"
+            android:parentActivityName=".Courses"
+            ></activity>              
+            <activity
+            android:name=".Lessons"
+            android:label="Lessons"
+            android:parentActivityName=".Courses"
+            ></activity>              
+            <activity
+            android:name=".NewEdition"
+            android:label="@string/title_activity_course"
+            android:parentActivityName=".Editions"
+            ></activity>              
+            <activity
+            android:name=".Payments"
+            android:label="@string/title_activity_payments"
+            android:parentActivityName=".MainActivity"
+            ></activity>            
+            <activity
+            android:name=".NewVehicle"
+            android:label="@string/title_activity_vehicle"
+            android:parentActivityName=".MainActivity"
+            ></activity>             
+            <activity
+            android:name=".Vehicles"
+            android:label="@string/title_activity_vehicles"
+            android:parentActivityName=".MainActivity"
+            ></activity>            
+            <activity
+            android:name=".LocationActivity"
+            android:label="@string/title_activity_location"
+            android:parentActivityName=".NoteActivity"
+            ></activity>            
+            <activity
+            android:name=".GalleryActivity"
+            android:label="@string/title_activity_gallery"
+            android:parentActivityName=".MainActivity"
+            ></activity>            
+            <activity
+            android:name=".MailActivity"
+            android:label="@string/title_activity_mail"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            ></activity>
+            <activity
+            android:name=".NoteActivity"
+            android:label="@string/title_activity_note"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            ></activity>
+            <activity
+            android:name=".NewBranch"
+            android:label="New Branch"
+            android:parentActivityName=".Branches"
+            ></activity>
+            <activity
+            android:name=".FeedActivity"
+            android:label="Face Feeds"
+            android:parentActivityName=".MainActivity">
+            </activity>
+            <activity
+            android:name=".FirebaseActivity"
+            android:label="Firebase"
+            android:parentActivityName=".MainActivity">
+            </activity>
+            <activity
+            android:name=".MovieActivity"
+            android:label="Movie"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            </activity>
+            <activity
+            android:name=".RetrofitActivity"
+            android:label="Retrofit Movie"
+            android:parentActivityName=".MainActivity">
+            </activity>
+            <activity
+            android:name=".UserfireActivity"
+            android:label="User Firebase"
+            android:windowSoftInputMode="adjustResize"
+            android:parentActivityName=".NoteActivity">
+            </activity>
+            <activity
+            android:name=".MainFireActivity"
+            android:label="Main Fire"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            </activity>
+            <activity
+            android:name=".CardActivity"
+            android:label="Card View"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            </activity>
+            <activity
+            android:name=".LoginfireActivity"
+            android:label="Main Fire"
+            android:parentActivityName=".MainFireActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            </activity>
+            <activity
+            android:name=".ResetPasswordActivity"
+            android:label="Main Fire"
+            android:parentActivityName=".MainFireActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            </activity>
+            <activity
+            android:name=".SignupActivity"
+            android:label="Main Fire"
+            android:parentActivityName=".MainFireActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            </activity>
+            <activity
+            android:name=".NewPermission"
+            android:label="New Permission"
+            android:parentActivityName=".Permissions"
+            android:theme="@style/AppTheme.NoActionBar">
+            </activity>
+            <activity
+            android:name=".Permissions"
+            android:label="Permission"
+            android:parentActivityName=".MainFireActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            </activity>
+
+            <activity
+            android:name=".ChatActivity"
+            android:label="Chat Messanger"
+            android:parentActivityName=".MainActivity"
+            ></activity>            
+
+            <activity
+            android:name=".Branches"
+            android:label="Branches"
+            android:parentActivityName=".MainActivity"
+            >
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+            </activity>
+
+
+        <activity
+            android:name=".family.FamilyActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".family.SignInActivity" />
+        <activity android:name=".family.NewPostActivity" />
+        <activity android:name=".family.PostDetailActivity" />
+
+
+        <activity
+            android:name=".condira.MemberActivity"
+            android:label="@string/app_name"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme" />
+        <activity 
+            android:name=".condira.SignInActivity2"
+            android:parentActivityName=".condira.MemberActivity" />
+        <activity 
+            android:name=".condira.NewRelationActivity"
+            android:parentActivityName=".condira.MemberActivity" />
+        <activity 
+            android:name=".condira.RelationDetailActivity"
+            android:parentActivityName=".condira.MemberActivity" />
+
+    </application>
+
+</manifest>
