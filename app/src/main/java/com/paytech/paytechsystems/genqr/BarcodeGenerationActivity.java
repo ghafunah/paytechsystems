@@ -24,8 +24,8 @@ import java.util.Arrays;
 
 public class BarcodeGenerationActivity extends AppCompatActivity implements View.OnClickListener {
     private  EditText contentEditText;
-    private Button generateButton;
-    private  ImageView generationImageView;
+    private Button generateBarcode, generateQr;
+    private  ImageView generationImageView, generationImageView2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,37 +33,43 @@ public class BarcodeGenerationActivity extends AppCompatActivity implements View
         setContentView(R.layout.qrgenerate);
 
         contentEditText = findViewById(R.id.contentEditText);
-        generateButton = findViewById(R.id.generateButton);
+        generateQr = findViewById(R.id.generateQr);
+        generateBarcode = findViewById(R.id.generateBarcode);
         generationImageView = findViewById(R.id.generationImageView);
+
         //Dummy data for me
         contentEditText.setText("770680112181227123456123");
 
-        generateButton.setOnClickListener(this);
+        generateQr.setOnClickListener(this);
+        generateBarcode.setOnClickListener(this);
 
      }
 
     @Override
     public void onClick(View v) {
         int i = v.getId();
-        if (i == R.id.generateButton) {
+        String text = contentEditText.getText().toString();
 
-            String text = contentEditText.getText().toString();
-
-            if (text.isEmpty()) {
-                Toast.makeText(this, "Enter something to create a barcode", Toast.LENGTH_SHORT).show();
-                return;
-            }
-            //Bitmap bitmap = QRCode.from(text).withColor(0xFFFF0000, 0xFFFFFFAA).withSize(1000, 1000).bitmap();
-            //generationImageView.setImageBitmap(bitmap);
+        if (text.isEmpty()) {
+            Toast.makeText(this, "Enter something to create a barcode", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (i == R.id.generateBarcode) {
             try {
-                createBarcodeBitmap(text, 2,1);
+                Bitmap barcode = createBarcodeBitmap(text, 600,150);
+                generationImageView.setImageBitmap(barcode);
             }catch (WriterException e){
                 Toast.makeText(this, "Barcode Error :" + e, Toast.LENGTH_SHORT).show();
             }
         }
+
+        if (i == R.id.generateQr) {
+            Bitmap bitmap = QRCode.from(text).withColor(0xFFFF0000, 0xFFFFFFAA).withSize(1000, 1000).bitmap();
+            generationImageView.setImageBitmap(bitmap);
+        }
     }
 
-    private void createBarcodeBitmap(String data, int width, int height) throws WriterException {
+    private Bitmap createBarcodeBitmap(String data, int width, int height) throws WriterException {
         MultiFormatWriter writer = new MultiFormatWriter();
         String finalData = Uri.encode(data);
 
@@ -79,8 +85,7 @@ public class BarcodeGenerationActivity extends AppCompatActivity implements View
             Arrays.fill(column, bm.get(i, 0) ? Color.BLACK : Color.WHITE);
             imageBitmap.setPixels(column, 0, 1, i, 0, 1, height);
         }
-        generationImageView.setImageBitmap(imageBitmap);
-        ///return imageBitmap;
+        return imageBitmap;
     }
 
 //    private Bitmap createBarcodeBitmap(String data, int width, int height) throws WriterException {

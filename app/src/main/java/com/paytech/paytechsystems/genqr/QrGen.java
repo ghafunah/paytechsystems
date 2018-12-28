@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.paytech.paytechsystems.R;
+import com.paytech.paytechsystems.ScanActivity;
+import com.paytech.paytechsystems.ScannerActivity;
 
 import static butterknife.internal.Utils.arrayOf;
 
@@ -44,9 +46,9 @@ public class QrGen extends AppCompatActivity implements View.OnClickListener {
         int i = v.getId();
         if (i == R.id.scanBarcodeButton) {
             //postComment();
-            //Intent intent = new Intent(QrGen.this, BarcodeScanningActivity.class);
-            //startActivity(intent);
-            Toast.makeText(this, "Enter action", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(QrGen.this, ScanActivity.class);
+            startActivity(intent);
+            //Toast.makeText(this, "Enter action", Toast.LENGTH_SHORT).show();
         }
         if (i == R.id.createBarcodeButton){
             Intent intent = new Intent(QrGen.this, BarcodeGenerationActivity.class);

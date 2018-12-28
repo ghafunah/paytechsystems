@@ -1,3 +1,6 @@
+git remote add origin https://ghafunah@bitbucket.org/ghafunah/paytechsystems.git
+git push -u origin master
+
 // Find all dinosaurs whose names come before Pterodactyl lexicographically.
 var ref = firebase.database().ref("dinosaurs");
 ref.orderByKey().endAt("pterodactyl").on("child_added", function(snapshot) {
