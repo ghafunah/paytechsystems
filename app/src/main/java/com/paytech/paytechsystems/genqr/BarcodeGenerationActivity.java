@@ -26,7 +26,9 @@ public class BarcodeGenerationActivity extends AppCompatActivity implements View
         contentEditText = findViewById(R.id.contentEditText);
         generateButton = findViewById(R.id.generateButton);
         generationImageView = findViewById(R.id.generationImageView);
+        //Dummy data
         contentEditText.setText("770680112181227123456123");
+
         generateButton.setOnClickListener(this);
 
      }
